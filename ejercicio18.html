@@ -1,0 +1,53 @@
+//Mostrar en una página html un párrafo de texto y un botón, aplicar estilos css.
+Crear un script que capture el evento clic del botón y que cambie el texto del párrafo 
+por otro
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legado de Jorge Bergoglio</title>
+    <style>
+        /* Estilos CSS */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            color: #444;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <p id="texto">Haz clic en el botón para mostrar el legado de Jorge Bergoglio.</p>
+    <button id="mostrarTexto">Mostrar Legado</button>
+
+    <script>
+        // Script para cambiar el texto del párrafo al hacer clic en el botón
+        const boton = document.getElementById('mostrarTexto');
+        const parrafo = document.getElementById('texto');
+
+        boton.addEventListener('click', () => {
+            parrafo.textContent = 'El legado de Jorge Bergoglio en el país será histórico y será recordado durante años por llegar a un lugar que parecía impensado para los argentinos. A raíz de esto, todos los ámbitos muestran cambios en sus actividades programadas, para conmemorar al sumo pontífice. La Asociación del Fútbol Argentino (AFA) es una de las entidades que postergó su agenda del día de hoy para mañana, en el mismo horario.';
+        });
+    </script>
+</body>
+</html>
