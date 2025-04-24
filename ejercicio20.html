@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Países y Capitales</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        select {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Países y Capitales</h1>
+    <label for="paises">Selecciona un país:</label>
+    <select id="paises">
+        <option value="Argentina">Argentina</option>
+        <option value="Brasil">Brasil</option>
+        <option value="México">México</option>
+        <option value="Chile">Chile</option>
+    </select>
+    <br>
+    <label for="capitales">Capital correspondiente:</label>
+    <select id="capitales">
+    </select>
+    <script>
+        const capitalesPorPais = {
+            "Argentina": ["Buenos Aires"],
+            "Brasil": ["Brasilia"],
+            "México": ["Ciudad de México"],
+            "Chile": ["Santiago"]
+        };
+        const paisesSelect = document.getElementById("paises");
+        const capitalesSelect = document.getElementById("capitales");
+        function actualizarCapitales() {
+            capitalesSelect.innerHTML = "";
+            const paisSeleccionado = paisesSelect.value;
+            const capitales = capitalesPorPais[paisSeleccionado];
+            capitales.forEach(capital => {
+                const opcion = document.createElement("option");
+                opcion.value = capital;
+                opcion.textContent = capital;
+                capitalesSelect.appendChild(opcion);
+            });
+        }
+        document.addEventListener("DOMContentLoaded", actualizarCapitales);
+        paisesSelect.addEventListener("change", actualizarCapitales);
+    </script>
+</body>
+</html>
