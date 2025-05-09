@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const radios = document.querySelectorAll("input[name='language']");
-    const resultDiv = document.getElementById("result");
+    const radios = document.querySelectorAll("input[name='languaje']");
+    const resultDiv = document.getElementById("resultado");
 
     radios.forEach(radio => {
         radio.addEventListener("change", function () {
